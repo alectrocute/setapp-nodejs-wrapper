@@ -8,7 +8,8 @@
     "nan": "^2.4.0"
   },
   "scripts": {
-    "build": "node-gyp rebuild --target=7.1.4 --arch=x64 --arch=arm64 --dist-url=https://electronjs.org/headers; ./node_modules/.bin/electron-rebuild",
+    "build": "node-gyp rebuild --target=7.1.4 --arch=x64 --arch=arm64 --dist-url=https://electronjs.org/headers; ./node_modules/.bin/electron-rebuild;",
+    "rebuild": "./node_modules/.bin/electron-rebuild --arch=x64 --arch=arm64;"
   },
   "gypfile": true,
   "devDependencies": {

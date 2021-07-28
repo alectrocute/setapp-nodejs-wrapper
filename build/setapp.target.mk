@@ -12,9 +12,6 @@ DEFS_Debug := \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DV8_COMPRESS_POINTERS' \
-	'-DV8_31BIT_SMIS_ON_64BIT_ARCH' \
-	'-DV8_REVERSE_JSARGS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -52,13 +49,13 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/alec/.electron-gyp/11.2.1/include/node \
-	-I/Users/alec/.electron-gyp/11.2.1/src \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/openssl/config \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/openssl/openssl/include \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/uv/include \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/zlib \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/v8/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/include/node \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/src \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/openssl/config \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/openssl/openssl/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/uv/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/zlib \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/libSetapp
 
@@ -72,9 +69,6 @@ DEFS_Release := \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DV8_COMPRESS_POINTERS' \
-	'-DV8_31BIT_SMIS_ON_64BIT_ARCH' \
-	'-DV8_REVERSE_JSARGS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -109,13 +103,13 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/alec/.electron-gyp/11.2.1/include/node \
-	-I/Users/alec/.electron-gyp/11.2.1/src \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/openssl/config \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/openssl/openssl/include \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/uv/include \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/zlib \
-	-I/Users/alec/.electron-gyp/11.2.1/deps/v8/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/include/node \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/src \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/openssl/config \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/openssl/openssl/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/uv/include \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/zlib \
+	-I/Users/alec/Library/Caches/node-gyp/12.20.0/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/libSetapp
 
@@ -149,7 +143,7 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.mm FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 LDFLAGS_Debug := \
-	-force_load  /Users/alec/Desktop/repos/ohtipi-main/src/binaries/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
+	-force_load  /Users/alec/Desktop/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first \
@@ -159,13 +153,13 @@ LDFLAGS_Debug := \
 	-stdlib=libc++
 
 LIBTOOLFLAGS_Debug := \
-	-force_load  /Users/alec/Desktop/repos/ohtipi-main/src/binaries/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
+	-force_load  /Users/alec/Desktop/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first
 
 LDFLAGS_Release := \
-	-force_load  /Users/alec/Desktop/repos/ohtipi-main/src/binaries/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
+	-force_load  /Users/alec/Desktop/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first \
@@ -175,7 +169,7 @@ LDFLAGS_Release := \
 	-stdlib=libc++
 
 LIBTOOLFLAGS_Release := \
-	-force_load  /Users/alec/Desktop/repos/ohtipi-main/src/binaries/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
+	-force_load  /Users/alec/Desktop/setapp-nodejs-wrapper/libSetapp/libSetapp.a -framework Security -framework IOKit -framework QuartzCore -framework Cocoa \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first
